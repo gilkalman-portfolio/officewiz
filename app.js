@@ -21,8 +21,19 @@
   stack.innerHTML = c.hero.tasks.map((t, i) =>
     `<div class="task" style="animation-delay:${i * .35}s"><span class="box"></span><span>${esc(t)}</span></div>`
   ).join('');
-  const tasks = stack.querySelectorAll('.task');
-  tasks.forEach((el, i) => setTimeout(() => el.classList.add('done'), 1400 + i * 700));
+  function runTaskAnimation() {
+    const tasks = [...stack.querySelectorAll('.task')];
+    tasks.forEach(el => {
+      el.classList.remove('done');
+      el.style.animationName = 'none';
+      el.offsetHeight; // force reflow → restart fade-in
+      el.style.animationName = '';
+    });
+    tasks.forEach((el, i) => setTimeout(() => el.classList.add('done'), 1400 + i * 700));
+    const cycleMs = 1400 + (tasks.length - 1) * 700 + 500 + 2000;
+    setTimeout(runTaskAnimation, cycleMs);
+  }
+  runTaskAnimation();
 
   /* Pain */
   $('pain-eyebrow').textContent = c.pain.eyebrow;
