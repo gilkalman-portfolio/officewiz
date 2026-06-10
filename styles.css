@@ -150,9 +150,11 @@ h3{font-size:1.12rem}
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:36px 0 24px}
 .service-card{
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  padding:24px 20px;transition:transform .15s,box-shadow .15s;
+  padding:24px 20px;transition:transform .15s,box-shadow .15s,background .2s,border-color .2s;
 }
-.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);background:var(--teal);border-color:var(--teal)}
+.service-card:hover h3{color:#fff}
+.service-card:hover p{color:rgba(255,255,255,.8)}
 .service-card .dot{
   width:10px;height:10px;border-radius:50%;background:var(--coral);margin-bottom:14px;
 }
