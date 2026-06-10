@@ -19,7 +19,7 @@
   /* Signature: self-checking task list */
   const stack = $('task-stack');
   stack.innerHTML = c.hero.tasks.map((t, i) =>
-    `<div class="task" style="animation-delay:${i * .35}s"><span class="box"></span><span>${esc(t)}</span></div>`
+    `<div class="task" style="animation-delay:${i * .7}s"><span class="box"></span><span>${esc(t)}</span></div>`
   ).join('');
   function runTaskAnimation() {
     const tasks = [...stack.querySelectorAll('.task')];
