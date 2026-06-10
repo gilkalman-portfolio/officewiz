@@ -126,7 +126,7 @@ h3{font-size:1.12rem}
 }
 .pain-card .moment{font-weight:700;color:#fff;margin-bottom:4px}
 .pain-card .interrupt{color:#F4A6A9}
-.pain-closing{font-size:1.15rem;max-width:640px;color:#DCEAE8}
+.pain-closing{font-size:1.15rem;max-width:640px;color:#DCEAE8;text-wrap:balance}
 
 /* ---------- about ---------- */
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
