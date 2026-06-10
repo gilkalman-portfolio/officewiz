@@ -1,0 +1,106 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: he
+media_folder: "assets"
+public_folder: "assets"
+
+collections:
+  - name: "site"
+    label: "תוכן האתר"
+    files:
+      - name: "content"
+        label: "כל הטקסטים"
+        file: "content.json"
+        format: "json"
+        fields:
+          - label: "פרטי העסק"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "מותג", name: "brand", widget: "string" }
+              - { label: "שם", name: "name", widget: "string" }
+              - { label: "שורת תיאור", name: "tagline", widget: "string" }
+              - { label: "טלפון", name: "phone", widget: "string" }
+              - { label: "וואטסאפ (פורמט 9725XXXXXXXX)", name: "whatsapp", widget: "string" }
+              - { label: "אימייל", name: "email", widget: "string" }
+          - label: "ראש העמוד (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "כותרת ראשית", name: "title", widget: "text" }
+              - { label: "כותרת משנה", name: "subtitle", widget: "text" }
+              - { label: "כפתור ראשי", name: "cta_primary", widget: "string" }
+              - { label: "כפתור משני", name: "cta_secondary", widget: "string" }
+              - label: "משימות ברשימה (אנימציה)"
+                name: "tasks"
+                widget: "list"
+                field: { label: "משימה", name: "task", widget: "string" }
+          - label: "סקשן הכאב"
+            name: "pain"
+            widget: "object"
+            fields:
+              - { label: "תגית", name: "eyebrow", widget: "string" }
+              - { label: "כותרת", name: "title", widget: "text" }
+              - label: "תרחישים"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "הרגע", name: "moment", widget: "string" }
+                  - { label: "ההפרעה", name: "interrupt", widget: "string" }
+              - { label: "משפט סיום", name: "closing", widget: "text" }
+          - label: "נעים להכיר"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "תגית", name: "eyebrow", widget: "string" }
+              - { label: "כותרת", name: "title", widget: "string" }
+              - { label: "טקסט (פסקאות מופרדות בשורה ריקה)", name: "body", widget: "text" }
+              - { label: "תג הסמכה", name: "badge", widget: "string" }
+              - { label: "תמונה", name: "photo", widget: "image", required: false }
+          - label: "שירותים"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "תגית", name: "eyebrow", widget: "string" }
+              - { label: "כותרת", name: "title", widget: "string" }
+              - label: "רשימת שירותים"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "שם השירות", name: "title", widget: "string" }
+                  - { label: "תיאור", name: "desc", widget: "text" }
+              - { label: "משפט סיום", name: "closing", widget: "string" }
+          - label: "תהליך העבודה"
+            name: "process"
+            widget: "object"
+            fields:
+              - { label: "תגית", name: "eyebrow", widget: "string" }
+              - { label: "כותרת", name: "title", widget: "string" }
+              - label: "שלבים"
+                name: "steps"
+                widget: "list"
+                fields:
+                  - { label: "שם השלב", name: "title", widget: "string" }
+                  - { label: "תיאור", name: "desc", widget: "text" }
+          - label: "שאלות ותשובות"
+            name: "faq"
+            widget: "object"
+            fields:
+              - { label: "תגית", name: "eyebrow", widget: "string" }
+              - { label: "כותרת", name: "title", widget: "string" }
+              - label: "שאלות"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "שאלה", name: "q", widget: "string" }
+                  - { label: "תשובה", name: "a", widget: "text" }
+          - label: "יצירת קשר"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "תגית", name: "eyebrow", widget: "string" }
+              - { label: "כותרת", name: "title", widget: "string" }
+              - { label: "כותרת משנה", name: "subtitle", widget: "string" }
+              - { label: "טקסט כפתור", name: "cta", widget: "string" }
