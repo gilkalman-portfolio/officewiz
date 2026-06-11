@@ -126,6 +126,41 @@
   const statsBar = document.querySelector('.stats-bar');
   if (statsBar) counterIo.observe(statsBar);
 
+  /* 3D tilt on service cards */
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transition = 'box-shadow .2s,border-color .2s';
+      card.style.transform = `perspective(700px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-4px)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = 'transform .45s ease,box-shadow .2s,border-color .2s';
+      card.style.transform = '';
+      setTimeout(() => card.style.transition = '', 450);
+    });
+  });
+
+  /* Smooth FAQ accordion */
+  document.querySelectorAll('details').forEach(details => {
+    const summary = details.querySelector('summary');
+    const answer = details.querySelector('.answer');
+    answer.style.maxHeight = '0';
+    summary.addEventListener('click', e => {
+      e.preventDefault();
+      if (details.open) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        requestAnimationFrame(() => answer.style.maxHeight = '0');
+        setTimeout(() => details.removeAttribute('open'), 350);
+      } else {
+        details.setAttribute('open', '');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        setTimeout(() => answer.style.maxHeight = '', 350);
+      }
+    });
+  });
+
   /* Scroll reveal — IntersectionObserver */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
