@@ -101,6 +101,31 @@
   /* Footer */
   $('footer-line').textContent = `© ${new Date().getFullYear()} ${c.site.name} · ${c.site.tagline}`;
 
+  /* Animated counters */
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1600;
+    const start = performance.now();
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 4); // easeOutQuart
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  const counterIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.stat-number').forEach(animateCounter);
+        counterIo.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  const statsBar = document.querySelector('.stats-bar');
+  if (statsBar) counterIo.observe(statsBar);
+
   /* Scroll reveal — IntersectionObserver */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {

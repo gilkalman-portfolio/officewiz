@@ -152,6 +152,17 @@ h3{font-size:1.12rem}
   padding:12px 16px;margin:1.2em 0;font-size:.95rem;color:var(--teal-ink);font-weight:600;
 }
 
+/* ---------- stats bar ---------- */
+.stats-bar{background:var(--teal-deep);padding:52px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat-item{color:#fff}
+.stat-number{
+  font-family:var(--font-display);font-size:clamp(2.4rem,4.5vw,3.4rem);
+  color:#fff;display:block;line-height:1;
+}
+.stat-label{font-size:.9rem;color:#C6DCDA;margin-top:.5em;display:block}
+@media(max-width:640px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:32px}}
+
 /* ---------- services ---------- */
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:36px 0 24px}
 .service-card{
