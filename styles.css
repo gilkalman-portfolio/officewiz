@@ -131,7 +131,7 @@ h3{font-size:1.12rem}
 /* ---------- about ---------- */
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
 .about-photo{
-  aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;
+  aspect-ratio:7/8;border-radius:var(--radius);overflow:hidden;
   background:var(--mist);box-shadow:var(--shadow);
   display:flex;align-items:center;justify-content:center;
   border:1px solid var(--line);
