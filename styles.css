@@ -213,6 +213,32 @@ summary::after{
 details[open] summary::after{transform:rotate(45deg)}
 details .answer{padding:0 22px 18px;color:var(--muted);overflow:hidden;transition:max-height .35s ease}
 
+/* ---------- testimonials ---------- */
+.testimonials-outer{position:relative;min-height:180px;padding:12px 0}
+.testimonial-slide{
+  display:none;flex-direction:column;align-items:center;gap:16px;
+  text-align:center;max-width:620px;margin:0 auto;
+  animation:tFadeIn .5s ease;
+}
+.testimonial-slide.active{display:flex}
+@keyframes tFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.testimonial-quote{
+  font-size:1.12rem;line-height:1.75;color:var(--text);
+  position:relative;padding:0 32px;
+}
+.testimonial-quote::before{
+  content:'\201C';font-family:var(--font-display);font-size:5rem;
+  color:var(--coral);opacity:.25;position:absolute;top:-20px;right:0;line-height:1;
+}
+.testimonial-author{font-weight:700;color:var(--teal-ink);margin-bottom:2px}
+.testimonial-role{font-size:.88rem;color:var(--muted)}
+.testimonial-dots{display:flex;gap:8px;justify-content:center;margin-top:28px}
+.testimonial-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--line);
+  border:none;cursor:pointer;padding:0;transition:background .25s,transform .25s;
+}
+.testimonial-dot.active{background:var(--coral);transform:scale(1.4)}
+
 /* ---------- contact ---------- */
 .section-contact{background:linear-gradient(160deg,var(--teal) 0%,var(--teal-deep) 100%);color:#fff}
 .section-contact h2{color:#fff}

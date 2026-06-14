@@ -122,6 +122,40 @@
   const statsBar = document.querySelector('.stats-bar');
   if (statsBar) counterIo.observe(statsBar);
 
+  /* Testimonials slider */
+  const testimonials = [
+    { text: "שלומית הורידה לי עול עצום מהכתפיים. הגבייה שהייתה סיוט הפכה למסודרת ופשוטה — לא חוזר לנהל לבד.", name: "יוסי כ.", role: "בעל עסק לשיפוצים" },
+    { text: "אחסינות מדהימה, תמיד זמינה ומדויקת. הרו״ח שלי מעיר בכל פגישה כמה החומרים מסודרים.", name: "מיכל ד.", role: "יועצת ארגונית עצמאית" },
+    { text: "חיסכתי שעות בחודש ומצאתי שקט נפשי. שלומית לוקחת אחריות ועושה — בלי לרדוף אחריה.", name: "אורן ל.", role: "מנהל סטארטאפ" },
+    { text: "אחרי שנים שניהלתי לבד, סוף סוף יש מישהי שאפשר לסמוך עליה לחלוטין. שווה כל שקל.", name: "ענת מ.", role: "מטפלת עצמאית" },
+    { text: "הדיוק והסדר שלה חסכו לי טעויות יקרות. מומלצת בחום לכל עצמאי שרוצה לישון בלילה.", name: "רמי ש.", role: "יועץ עסקי" },
+  ];
+  const tOuter = document.querySelector('.testimonials-outer');
+  const tDots = document.querySelector('.testimonial-dots');
+  if (tOuter && tDots) {
+    tOuter.innerHTML = testimonials.map((t, i) =>
+      `<div class="testimonial-slide${i === 0 ? ' active' : ''}">
+        <p class="testimonial-quote">${esc(t.text)}</p>
+        <div><p class="testimonial-author">${esc(t.name)}</p><p class="testimonial-role">${esc(t.role)}</p></div>
+      </div>`
+    ).join('');
+    tDots.innerHTML = testimonials.map((_, i) =>
+      `<button class="testimonial-dot${i === 0 ? ' active' : ''}" aria-label="המלצה ${i + 1}"></button>`
+    ).join('');
+    let cur = 0;
+    const slides = tOuter.querySelectorAll('.testimonial-slide');
+    const dots = tDots.querySelectorAll('.testimonial-dot');
+    function goTo(n) {
+      slides[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = (n + testimonials.length) % testimonials.length;
+      slides[cur].classList.add('active');
+      dots[cur].classList.add('active');
+    }
+    let timer = setInterval(() => goTo(cur + 1), 5000);
+    dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 5000); }));
+  }
+
   /* 3D tilt on service cards */
   document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('mousemove', e => {
