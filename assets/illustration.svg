@@ -1,0 +1,127 @@
+<svg viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="איור: Back Office מסודר">
+  <defs>
+    <clipPath id="desk-clip"><rect rx="16" width="420" height="480"/></clipPath>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EDF4F3"/>
+      <stop offset="100%" stop-color="#D6EBEA"/>
+    </linearGradient>
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#073E46" flood-opacity=".12"/>
+    </filter>
+    <filter id="sm-shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#073E46" flood-opacity=".10"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="420" height="480" fill="url(#bg-grad)" rx="16"/>
+
+  <!-- Desk surface -->
+  <rect x="20" y="320" width="380" height="140" rx="14" fill="#FBFAF7" filter="url(#card-shadow)"/>
+  <rect x="20" y="320" width="380" height="8" rx="8" fill="#D8E4E3"/>
+
+  <!-- Laptop body -->
+  <rect x="100" y="220" width="220" height="130" rx="10" fill="#1D3539" filter="url(#card-shadow)"/>
+  <!-- Laptop screen bezel -->
+  <rect x="110" y="228" width="200" height="112" rx="7" fill="#0B2F34"/>
+  <!-- Screen content: spreadsheet rows -->
+  <rect x="118" y="236" width="184" height="96" rx="4" fill="#FBFAF7"/>
+  <!-- Header row -->
+  <rect x="118" y="236" width="184" height="16" rx="4" fill="#EDF4F3"/>
+  <rect x="122" y="240" width="44" height="8" rx="3" fill="#006A77" opacity=".4"/>
+  <rect x="172" y="240" width="30" height="8" rx="3" fill="#006A77" opacity=".25"/>
+  <rect x="208" y="240" width="30" height="8" rx="3" fill="#006A77" opacity=".25"/>
+  <rect x="244" y="240" width="30" height="8" rx="3" fill="#006A77" opacity=".25"/>
+  <!-- Data rows -->
+  <g opacity=".7">
+    <rect x="122" y="258" width="36" height="6" rx="2" fill="#5A7378"/>
+    <rect x="172" y="258" width="22" height="6" rx="2" fill="#5A7378"/>
+    <rect x="244" y="258" width="22" height="6" rx="2" fill="#E8484F" opacity=".8"/>
+    <!-- check -->
+    <circle cx="231" cy="261" r="5" fill="#006A77" opacity=".9"/>
+    <polyline points="228,261 230,263 234,258" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="122" y="272" width="44" height="6" rx="2" fill="#5A7378"/>
+    <rect x="172" y="272" width="18" height="6" rx="2" fill="#5A7378"/>
+    <rect x="244" y="272" width="28" height="6" rx="2" fill="#5A7378"/>
+    <circle cx="231" cy="275" r="5" fill="#006A77" opacity=".9"/>
+    <polyline points="228,275 230,277 234,272" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="122" y="286" width="32" height="6" rx="2" fill="#5A7378"/>
+    <rect x="172" y="286" width="26" height="6" rx="2" fill="#5A7378"/>
+    <rect x="244" y="286" width="20" height="6" rx="2" fill="#E8484F" opacity=".6"/>
+    <circle cx="231" cy="289" r="5" fill="#D8E4E3"/>
+
+    <rect x="122" y="300" width="40" height="6" rx="2" fill="#5A7378"/>
+    <rect x="172" y="300" width="20" height="6" rx="2" fill="#5A7378"/>
+    <rect x="244" y="300" width="24" height="6" rx="2" fill="#5A7378"/>
+    <circle cx="231" cy="303" r="5" fill="#006A77" opacity=".9"/>
+    <polyline points="228,303 230,305 234,300" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Laptop base -->
+  <rect x="80" y="348" width="260" height="10" rx="5" fill="#1D3539"/>
+  <rect x="150" y="355" width="120" height="4" rx="2" fill="#0B2F34"/>
+
+  <!-- Document stack (right of desk) -->
+  <g filter="url(#sm-shadow)">
+    <rect x="310" y="262" width="72" height="90" rx="6" fill="#fff" transform="rotate(6,346,307)"/>
+    <rect x="310" y="262" width="72" height="90" rx="6" fill="#FBFAF7" transform="rotate(2,346,307)"/>
+    <rect x="310" y="262" width="72" height="90" rx="6" fill="#fff"/>
+    <!-- lines on top doc -->
+    <rect x="318" y="276" width="48" height="5" rx="2" fill="#EDF4F3"/>
+    <rect x="318" y="286" width="36" height="5" rx="2" fill="#EDF4F3"/>
+    <rect x="318" y="296" width="42" height="5" rx="2" fill="#EDF4F3"/>
+    <rect x="318" y="306" width="30" height="5" rx="2" fill="#EDF4F3"/>
+    <!-- coral stamp -->
+    <rect x="330" y="318" width="36" height="16" rx="4" fill="#E8484F" opacity=".15"/>
+    <rect x="333" y="321" width="30" height="4" rx="2" fill="#E8484F" opacity=".6"/>
+    <rect x="333" y="327" width="22" height="4" rx="2" fill="#E8484F" opacity=".4"/>
+  </g>
+
+  <!-- Coffee mug (left of desk) -->
+  <g filter="url(#sm-shadow)">
+    <rect x="48" y="296" width="44" height="46" rx="8" fill="#fff"/>
+    <rect x="48" y="296" width="44" height="12" rx="6" fill="#EDF4F3"/>
+    <!-- mug handle -->
+    <path d="M92,308 Q106,308 106,322 Q106,336 92,336" fill="none" stroke="#D8E4E3" stroke-width="6" stroke-linecap="round"/>
+    <!-- steam -->
+    <path d="M62,292 Q65,285 62,278" fill="none" stroke="#D8E4E3" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M72,290 Q75,283 72,276" fill="none" stroke="#D8E4E3" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- teal accent on mug -->
+    <rect x="54" y="314" width="32" height="4" rx="2" fill="#006A77" opacity=".25"/>
+  </g>
+
+  <!-- Floating notification card: גבייה -->
+  <g filter="url(#card-shadow)">
+    <rect x="24" y="60" width="164" height="66" rx="12" fill="#fff"/>
+    <circle cx="50" cy="93" r="16" fill="#EDF4F3"/>
+    <!-- coin/money icon -->
+    <circle cx="50" cy="93" r="10" fill="#006A77" opacity=".2"/>
+    <text x="50" y="97" text-anchor="middle" font-size="13" fill="#006A77" font-family="Arial">₪</text>
+    <rect x="74" y="76" width="100" height="8" rx="3" fill="#1D3539" opacity=".7"/>
+    <rect x="74" y="89" width="72" height="6" rx="2" fill="#5A7378" opacity=".5"/>
+    <rect x="74" y="104" width="52" height="10" rx="5" fill="#E8484F" opacity=".15"/>
+    <rect x="79" y="107" width="42" height="4" rx="2" fill="#E8484F" opacity=".7"/>
+  </g>
+
+  <!-- Floating notification card: ✓ משימה -->
+  <g filter="url(#card-shadow)">
+    <rect x="232" y="40" width="168" height="58" rx="12" fill="#006A77"/>
+    <circle cx="258" cy="69" r="14" fill="#fff" opacity=".15"/>
+    <polyline points="251,69 256,74 265,62" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="278" y="56" width="108" height="8" rx="3" fill="#fff" opacity=".85"/>
+    <rect x="278" y="69" width="76" height="6" rx="2" fill="#fff" opacity=".5"/>
+    <rect x="278" y="80" width="56" height="8" rx="3" fill="#fff" opacity=".3"/>
+  </g>
+
+  <!-- Small coral dot accent (brand) -->
+  <circle cx="370" cy="170" r="8" fill="#E8484F" opacity=".25"/>
+  <circle cx="370" cy="170" r="4" fill="#E8484F" opacity=".6"/>
+
+  <!-- Plant (bottom left corner accent) -->
+  <ellipse cx="36" cy="390" rx="16" ry="8" fill="#006A77" opacity=".12"/>
+  <rect x="33" y="358" width="6" height="34" rx="3" fill="#5A7378" opacity=".4"/>
+  <ellipse cx="30" cy="360" rx="12" ry="16" fill="#006A77" opacity=".2" transform="rotate(-15,30,360)"/>
+  <ellipse cx="42" cy="364" rx="10" ry="14" fill="#006A77" opacity=".25" transform="rotate(10,42,364)"/>
+  <ellipse cx="36" cy="356" rx="8" ry="12" fill="#006A77" opacity=".3"/>
+</svg>
