@@ -67,7 +67,7 @@
     img.alt = c.site.name;
     img.onload = () => { photo.innerHTML = ''; photo.appendChild(img); };
     img.onerror = () => { photo.innerHTML = `<img src="assets/illustration.svg" alt="" style="width:100%;height:100%;object-fit:contain;padding:12px">`; };
-  } else {
+    } else 
     photo.innerHTML = `<img src="assets/illustration.svg" alt="" style="width:100%;height:100%;object-fit:contain;padding:12px">`;
 
   /* Services */
