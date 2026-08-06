@@ -61,7 +61,14 @@
   $('about-body').innerHTML = c.about.body.split('\n\n').map(p => `<p>${esc(p)}</p>`).join('');
   $('about-badge').textContent = c.about.badge;
   const photo = $('about-photo');
-  photo.innerHTML = `<img src="assets/illustration.svg" alt="${esc(c.site.name)}" style="width:100%;height:100%;object-fit:cover">`;
+  if (c.about.photo) {
+    const img = new Image();
+    img.src = c.about.photo;
+    img.alt = c.site.name;
+    img.onload = () => { photo.innerHTML = ''; photo.appendChild(img); };
+    img.onerror = () => { photo.innerHTML = `<img src="assets/illustration.svg" alt="" style="width:100%;height:100%;object-fit:contain;padding:12px">`; };
+  } else {
+    photo.innerHTML = `<img src="assets/illustration.svg" alt="" style="width:100%;height:100%;object-fit:contain;padding:12px">`;
 
   /* Services */
   $('services-eyebrow').textContent = c.services.eyebrow;
